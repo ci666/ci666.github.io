@@ -90,7 +90,8 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/技术文章"><b>「
+                    </b>技术文章<b> 」</b></a>
                 
                 March 13, 2021
             </p>
@@ -101,7 +102,7 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.3k
+                    1.4k
                 </span>
                 
                 
@@ -147,14 +148,14 @@
 
 <h2 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h2><h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<br><a target="_blank" rel="noopener" href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p>
 <p>由于是通过url请求php编写的脚本执行操作,所以打开nginx.conf文件查看执行用户,默认为www,也可在任意php文件中添加代码: <code>echo system("whoami")</code>;,然后访问文件查看php运行用户.<br>确定用户后,打开<code>/etc/passwd </code>文件查看该用户的信息,如下</p>
-<pre><code>www:x:1000:1000::/var/www:/bin/bash 
+<pre><code class="shell">www:x:1000:1000::/var/www:/bin/bash
 </code></pre>
 <p> 生成公钥执行命令:</p>
-<pre><code>ssh-keygen -m PEM -t rsa -b 4096 -C "your.email@example.com"
+<pre><code class="shell">ssh-keygen -m PEM -t rsa -b 4096 -C "your.email@example.com"
 Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 推荐使用默认址
 Enter passphrase (empty for no passphrase):   // 此处不填写，回车即可；如果填写密码，则每次使用 SSH方式推送代码时都会要求输入密码。
 </code></pre>
-<h2 id="coding后台操作"><a href="#coding后台操作" class="headerlink" title="coding后台操作"></a>coding后台操作</h2><pre><code>git config --global user.email "13632429781@163.com"
+<h2 id="coding后台操作"><a href="#coding后台操作" class="headerlink" title="coding后台操作"></a>coding后台操作</h2><pre><code class="shell">git config --global user.email "13632429781@163.com"
 git config --global user.name "huxxhua"
 ssh -T git@e.coding.net
 </code></pre>
@@ -213,7 +214,7 @@ ssh -T git@e.coding.net
                 </div>
                 <ul>
                     <li><a href="/">1 <p>Articles</p></a></li>
-                    <li><a href="/categories">0 <p>Categories</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
                     <li><a href="/tags">2 <p>Tags</p></a></li>
                 </ul>
             </div>
