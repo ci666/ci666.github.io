@@ -149,7 +149,8 @@
 <h2 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h2><blockquote>
 <p>敬请期待</p>
 </blockquote>
-<h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<br><a target="_blank" rel="noopener" href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p>
+<hr>
+<h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<a target="_blank" rel="noopener" href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p>
 <p>由于是通过url请求php编写的脚本执行操作,所以打开nginx.conf文件查看执行用户,默认为www,也可在任意php文件中添加代码: <code>echo system("whoami")</code>;,然后访问文件查看php运行用户.<br>确定用户后,打开<code>/etc/passwd </code>文件查看该用户的信息,如下</p>
 <pre><code class="shell">www:x:1000:1000::/var/www:/bin/bash
 </code></pre>
@@ -443,10 +444,10 @@ ssh -T git@e.coding.net
       el: '#vcomments',
       appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
       appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
-      notify: 'false',
-      verify: 'false',
+      notify: 'true',
+      verify: 'true',
       avatar: 'mp',
-      placeholder: 'Leave your throughs behind~',
+      placeholder: '交流无界，写下你的想法',
       visitor: 'true',
       path: path,
       lang: language,

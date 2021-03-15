@@ -6,7 +6,7 @@
   <link href="https://guanhua.life/atom.xml" rel="self"/>
   
   <link href="https://guanhua.life/"/>
-  <updated>2021-03-15T16:11:43.698Z</updated>
+  <updated>2021-03-15T16:15:20.765Z</updated>
   <id>https://guanhua.life/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://guanhua.life/2021/03/13/test/"/>
     <id>https://guanhua.life/2021/03/13/test/</id>
     <published>2021-03-13T05:04:24.000Z</published>
-    <updated>2021-03-15T16:11:43.698Z</updated>
+    <updated>2021-03-15T16:15:20.765Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首次在项目开发中使用git版本管理，挖坑过程，主要为了解决每次完成更改上传代码后,还需要登录服务器将代码拉取下来，比较麻烦。</p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>使用Webhooks功能,以实现在向git仓库推送/合并等时机让服务器自动拉取新代码，这里用的是coding.net的服务器。</p><span id="more"></span><h2 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h2><blockquote><p>敬请期待</p></blockquote><h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<br><a href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p><p>由于是通过url请求php编写的脚本执行操作,所以打开nginx.conf文件查看执行用户,默认为www,也可在任意php文件中添加代码: <code>echo system("whoami")</code>;,然后访问文件查看php运行用户.<br>确定用户后,打开<code>/etc/passwd </code>文件查看该用户的信息,如下</p><pre><code class="shell">www:x:1000:1000::/var/www:/bin/bash</code></pre><p> 生成公钥执行命令:</p><pre><code class="shell">ssh-keygen -m PEM -t rsa -b 4096 -C "your.email@example.com"Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 推荐使用默认址Enter passphrase (empty for no passphrase):   // 此处不填写，回车即可；如果填写密码，则每次使用 SSH方式推送代码时都会要求输入密码。</code></pre><h2 id="coding后台操作"><a href="#coding后台操作" class="headerlink" title="coding后台操作"></a>coding后台操作</h2><pre><code class="shell">git config --global user.email "13632429781@163.com"git config --global user.name "huxxhua"ssh -T git@e.coding.net</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首次在项目开发中使用git版本管理，挖坑过程，主要为了解决每次完成更改上传代码后,还需要登录服务器将代码拉取下来，比较麻烦。</p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>使用Webhooks功能,以实现在向git仓库推送/合并等时机让服务器自动拉取新代码，这里用的是coding.net的服务器。</p><span id="more"></span><h2 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h2><blockquote><p>敬请期待</p></blockquote><hr><h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<a href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p><p>由于是通过url请求php编写的脚本执行操作,所以打开nginx.conf文件查看执行用户,默认为www,也可在任意php文件中添加代码: <code>echo system("whoami")</code>;,然后访问文件查看php运行用户.<br>确定用户后,打开<code>/etc/passwd </code>文件查看该用户的信息,如下</p><pre><code class="shell">www:x:1000:1000::/var/www:/bin/bash</code></pre><p> 生成公钥执行命令:</p><pre><code class="shell">ssh-keygen -m PEM -t rsa -b 4096 -C "your.email@example.com"Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 推荐使用默认址Enter passphrase (empty for no passphrase):   // 此处不填写，回车即可；如果填写密码，则每次使用 SSH方式推送代码时都会要求输入密码。</code></pre><h2 id="coding后台操作"><a href="#coding后台操作" class="headerlink" title="coding后台操作"></a>coding后台操作</h2><pre><code class="shell">git config --global user.email "13632429781@163.com"git config --global user.name "huxxhua"ssh -T git@e.coding.net</code></pre>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;首次在项目开发中使用git版本管理，挖坑过程，主要为了解决每次完成更改上传代码后,还需要登录服务器将代码拉取下来，比较麻烦。&lt;/p&gt;
