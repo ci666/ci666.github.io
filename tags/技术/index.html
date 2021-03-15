@@ -161,11 +161,6 @@
             </span>
             
             
-            <span id="/2021/03/13/test/" class="leancloud_visitors" data-flag-title="">
-                <b class="iconfont icon-read"></b> <i>Read count</i>
-                <span class="leancloud-visitors-count">1000000</span>
-            </span>
-            
         </p>
         
         
@@ -174,7 +169,7 @@
         <div class="md-content animated fadeIn">
             
             <p>首次在项目开发中使用git版本管理，挖坑过程，主要为了解决每次完成更改上传代码后,还需要登录服务器将代码拉取下来，比较麻烦。</p>
-<p>使用Webhooks功能,以实现在...</p>
+<p>使用Webhooks功能,以实...</p>
             
             <span class="read-more"><a href="/2021/03/13/test/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
@@ -282,6 +277,10 @@
 
 
  
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
@@ -403,38 +402,6 @@
   }
 </script>
 
- 
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-<script>
-  var valine = new Valine();
-
-  function initValine(path) {
-    if (!path) path = window.location.pathname;
-    let language = 'en';
-    if (!language) {
-      language = 'en';
-    } else {
-      language = language.toLowerCase();
-    }
-    valine.init({
-      el: '#vcomments',
-      appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
-      appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
-      notify: 'false',
-      verify: 'false',
-      avatar: 'mp',
-      placeholder: 'Leave your throughs behind~',
-      visitor: 'true',
-      path: path,
-      lang: language,
-    });
-  }
-
-  $(document).ready(function () {
-    initValine();
-  });
-</script>
 
 
 

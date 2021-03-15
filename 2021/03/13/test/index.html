@@ -112,11 +112,6 @@
                 </span>
                 
                 
-                <span id="/2021/03/13/test/" class="leancloud_visitors" data-flag-title="项目开发使用git版本管理-挖坑过程">
-                    <b class="iconfont icon-read"></b> <i>Read count</i>
-                    <span class="leancloud-visitors-count">1000000</span>
-                </span>
-                
                 
             </p>
             
@@ -183,7 +178,18 @@ ssh -T git@e.coding.net
                         
             
             
-            <div id="vcomments"></div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='0ccfe7fc79cd8f8b3da5'
+        data-cs='cf36f0439f529948708ff36cb54dc0c1359850cc'
+        data-r='ci666.github.io'
+        data-o='ci666'
+        data-a='ci666'
+        data-d=''
+    >Comments</div>
+
+
+            
             
         </div>
         <div class="sidebar">
@@ -303,6 +309,10 @@ ssh -T git@e.coding.net
 
 
  
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
@@ -424,38 +434,6 @@ ssh -T git@e.coding.net
   }
 </script>
 
- 
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-<script>
-  var valine = new Valine();
-
-  function initValine(path) {
-    if (!path) path = window.location.pathname;
-    let language = 'en';
-    if (!language) {
-      language = 'en';
-    } else {
-      language = language.toLowerCase();
-    }
-    valine.init({
-      el: '#vcomments',
-      appId: 'QHCOIEBlyjBUMAjaE5ilzafk-gzGzoHsz',
-      appKey: 'ggeGwz8ypB9uiAIYSRH5T0PF',
-      notify: 'false',
-      verify: 'false',
-      avatar: 'mp',
-      placeholder: 'Leave your throughs behind~',
-      visitor: 'true',
-      path: path,
-      lang: language,
-    });
-  }
-
-  $(document).ready(function () {
-    initValine();
-  });
-</script>
 
 
 
