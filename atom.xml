@@ -3,11 +3,11 @@
   <title>柚子爸爸博客</title>
   
   
-  <link href="https://ci666.github.io/atom.xml" rel="self"/>
+  <link href="https://guanhua.life/atom.xml" rel="self"/>
   
-  <link href="https://ci666.github.io/"/>
+  <link href="https://guanhua.life/"/>
   <updated>2021-03-14T15:14:03.586Z</updated>
-  <id>https://ci666.github.io/</id>
+  <id>https://guanhua.life/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>项目开发使用git版本管理-挖坑过程</title>
-    <link href="https://ci666.github.io/2021/03/13/test/"/>
-    <id>https://ci666.github.io/2021/03/13/test/</id>
+    <link href="https://guanhua.life/2021/03/13/test/"/>
+    <id>https://guanhua.life/2021/03/13/test/</id>
     <published>2021-03-13T05:04:24.000Z</published>
     <updated>2021-03-14T15:14:03.586Z</updated>
     
@@ -31,12 +31,12 @@
     
     
     
-    <category term="技术文章" scheme="https://ci666.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    <category term="技术文章" scheme="https://guanhua.life/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
     
     
-    <category term="技术" scheme="https://ci666.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://guanhua.life/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="git" scheme="https://ci666.github.io/tags/git/"/>
+    <category term="git" scheme="https://guanhua.life/tags/git/"/>
     
   </entry>
   
