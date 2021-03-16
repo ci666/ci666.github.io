@@ -372,11 +372,11 @@ audio {
   background-size: 75px 32px;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-mask-box-image: url("../img/logo_del.png");
+  -webkit-mask-box-image: url("../img/newlogo1.png");
   background-color: #fff;
   width: 75px;
   height: 32px;
-  mask-image: url("../img/logo_del.png");
+  mask-image: url("../img/newlogo1.png");
   mask-size: contain;
   transition: background-color 0.5s ease-in-out;
 }
