@@ -4,11 +4,40 @@
   
     
     <entry>
+      <title>redis和memcache 缓存比较</title>
+      <link href="2021/03/16/redis-memcache-compare/"/>
+      <url>2021/03/16/redis-memcache-compare/</url>
+      
+        <content type="html"><![CDATA[<h3 id="缓存比较"><a href="#缓存比较" class="headerlink" title="缓存比较"></a>缓存比较</h3><blockquote><p>redis     ：一款开源的，key-value型，基于内存并支持持久化的nosql数据库</p></blockquote><blockquote><p>memcache  ：一款开源，高性能，分布式的内存系统。</p></blockquote><p>memcached更专一高效，而redis追求全面发展</p><p><img src="https://imgkr2.cn-bj.ufileos.com/e1a1866b-0c31-48ab-92ab-b83cf1ff9c77.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=BQQk5d5vcQxFkeKu2M0LVonseW0%253D&amp;Expires=1615944416"></p><hr><h3 id="缓存相关"><a href="#缓存相关" class="headerlink" title="缓存相关"></a>缓存相关</h3><p>Redis和Memcached的区别</p><ul><li>Redis和Memcache都是将数据存放在内存中，都是内存数据库。但是Memcache还可以缓存其他东西，比如图片、视频</li><li>Redis不只支持简单的k/v类型的数据，同时还提供list、set、hash等数据结构的存储</li><li>虚拟内存，当物理内存用完时Redis可以将一些很久没有用到的value交换到磁盘</li><li>过期策略，memcache在set时就指定，例如 setkey1008即永不过期，redis可以通过expire设定，例如： expire name10</li><li>分布式，设定memcache集群，利用magent做一主多从；redis也可以做一主多从。</li><li>存储安全，memcache挂掉后，数据没了；redis可以定期保存在磁盘（持久化）</li><li>灾难恢复，memcache挂掉后数据不可恢复；redis数据丢失后可以通过aof恢复</li><li>redis支持数据的备份，即master-slave模式的数据备份</li><li>应用场景不同：redis除了可以做nosql数据库之外，还能做消息队列、数据堆栈和数据缓存等。memcache适合于缓存sql语句、数据集、用户临时性数据、延迟查询数据和session等</li></ul><p>字符串类型实际上可以是字符串、数字、二进制（图片、音频），单最大不能超过512M。</p><h3 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h3><ol><li>缓存<br>字符串最经典的使用场景，redis作为缓存层，mysql作为存储层，绝大部分请求数据都是redis中获取，由于redis具有支撑高并发特性，所以缓存通常能起到加速读写和降低后端压力的作用。</li><li>共享session<br>处于负载均衡的考虑，分布式服务会将用户信息的访问均衡到不同服务器，用户刷新一次访问可讷讷个会需要重新登录，为了避免这个问题可以使用redis将用户session集中管理，在这种模式下只要保证redis的高可用和扩展性，每次获取用户更新或查询登录信息都直接从redis中集中获取。</li><li>限速<br>出于安全考虑，每次进行登录时让用户输入手机验证码，为了短信接口不被频繁访问，会限制用户每分钟获取验证码的频率。<br>redis是单线程的么，为什么？<br>因为CPU并不是Redis的瓶颈，Redis的瓶颈最有可能是机器内存或者网络带宽。既然单线程容易实现，而且CPU不会成为瓶颈，那么久顺理成章的采用了单线程的方案。<br>当然单个Redis进程是没办法使用多核的 ，但是它来就不是非常计算密集型的服务。如果单核性能不够用，可以多开几个进程。</li></ol><h3 id="各自比较的优势："><a href="#各自比较的优势：" class="headerlink" title="各自比较的优势："></a>各自比较的优势：</h3><ol><li>在高并发场景的压力下，多线程非阻塞式IO的Memcached表现会更加优异。</li><li>Memcached的速度要比Redis更快也更安全。</li></ol><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol><li>如果大家对持久化要求不高，更希望快速高效，建议大家优先考虑Memcached</li><li>追求多类型支撑，持久化要求相对比较高的情况下，优先使用Redis</li><li>以往你们使用Redis的String类型做的事，都可以用Memcached替换，以此换取更好的性能提升； 除此以外，优先考虑Redis；</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术文章 </category>
+          
+          <category> web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> 缓存 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>项目开发使用git版本管理-挖坑过程</title>
       <link href="2021/03/13/test/"/>
       <url>2021/03/13/test/</url>
       
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首次在项目开发中使用git版本管理，挖坑过程，主要为了解决每次完成更改上传代码后,还需要登录服务器将代码拉取下来，比较麻烦。</p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>使用Webhooks功能,以实现在向git仓库推送/合并等时机让服务器自动拉取新代码，这里用的是coding.net的服务器。</p><span id="more"></span><h2 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h2><blockquote><p>敬请期待</p></blockquote><hr><h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<a href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p><p>由于是通过url请求php编写的脚本执行操作,所以打开nginx.conf文件查看执行用户,默认为www,也可在任意php文件中添加代码: <code>echo system("whoami")</code>;,然后访问文件查看php运行用户.<br>确定用户后,打开<code>/etc/passwd </code>文件查看该用户的信息,如下</p><pre><code class="shell">www:x:1000:1000::/var/www:/bin/bash</code></pre><p> 生成公钥执行命令:</p><pre><code class="shell">ssh-keygen -m PEM -t rsa -b 4096 -C "your.email@example.com"Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 推荐使用默认址Enter passphrase (empty for no passphrase):   // 此处不填写，回车即可；如果填写密码，则每次使用 SSH方式推送代码时都会要求输入密码。</code></pre><h2 id="coding后台操作"><a href="#coding后台操作" class="headerlink" title="coding后台操作"></a>coding后台操作</h2><pre><code class="shell">git config --global user.email "13632429781@163.com"git config --global user.name "huxxhua"ssh -T git@e.coding.net</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>r</p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首次在项目开发中使用git版本管理，挖坑过程，主要为了解决每次完成更改上传代码后,还需要登录服务器将代码拉取下来，比较麻烦。</p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>使用Webhooks功能,以实现在向git仓库推送/合并等时机让服务器自动拉取新代码，这里用的是coding.net的服务器。</p><span id="more"></span><h2 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h2><blockquote><p>敬请期待</p></blockquote><h2 id="服务器端操作"><a href="#服务器端操作" class="headerlink" title="服务器端操作"></a>服务器端操作</h2><p>具体可参考：<a href="https://help.coding.net/docs/project-settings/features/ssh.html#pageTitle">官方帮助中心</a></p><p>由于是通过url请求php编写的脚本执行操作,所以打开nginx.conf文件查看执行用户,默认为www,也可在任意php文件中添加代码: <code>echo system("whoami")</code>;,然后访问文件查看php运行用户.<br>确定用户后,打开<code>/etc/passwd </code>文件查看该用户的信息,如下</p><pre><code class="shell">www:x:1000:1000::/var/www:/bin/bash</code></pre><p> 生成公钥执行命令:</p><pre><code class="shell">ssh-keygen -m PEM -t rsa -b 4096 -C "your.email@example.com"Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 推荐使用默认址Enter passphrase (empty for no passphrase):   // 此处不填写，回车即可；如果填写密码，则每次使用 SSH方式推送代码时都会要求输入密码。</code></pre><h2 id="coding后台操作"><a href="#coding后台操作" class="headerlink" title="coding后台操作"></a>coding后台操作</h2><pre><code class="shell">git config --global user.email "13632429781@163.com"git config --global user.name "huxxhua"ssh -T git@e.coding.net</code></pre>]]></content>
       
       
       <categories>
